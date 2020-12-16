@@ -42,8 +42,7 @@ public class AndroidWebDriver implements DriverSource {
         capabilities.setCapability(MobileCapabilityType.APPIUM_VERSION, properties.getProperty("appium.version"));
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, properties.getProperty("android.platform.name"));
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, properties.getProperty("device.name"));
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, properties.getProperty("device.version"));
-        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, properties.getProperty("automationName"));
+        capabilities.setCapability(MobileCapabilityType.VERSION, properties.getProperty("device.version"));
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
         capabilities.setCapability("appWaitPackage", "com.aimprosoft.aimchat");
         capabilities.setCapability("appWaitActivity", "*");
