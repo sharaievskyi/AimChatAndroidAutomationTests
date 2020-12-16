@@ -32,4 +32,12 @@ public class AuthorizationUserSteps {
     public void verifyThatTheProgressBarIsDisplayed() {
         Assert.assertTrue("The progress bar is not displayed", authorizationPage.verifyThatTheProgressBarIsDisplayed());
     }
+    @Step
+    public void verifyThatTheAimChatLogoIsDisplayed() {
+        Assert.assertTrue("The AimChat logo is not displayed", authorizationPage.VerifyThatTheAimChatLogoIsDisplayed());
+    }
+    @Step
+    public void verifyThatTheDomainNameIsDisplayed(String domainName) {
+        Assert.assertTrue("The domain name " + domainName + " isn't displayed", authorizationPage.verifyThatTheDomainNameIsDisplayed(domainName));
+    }
 }

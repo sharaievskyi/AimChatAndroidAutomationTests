@@ -10,6 +10,7 @@ Feature: Message history
     When tap on the "IronMan" room in the left drawer
     Then the "IronMan" room is opened
     When enter "qwerty1" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty1" sent
@@ -27,6 +28,7 @@ Feature: Message history
     When tap on the "IronMan" room in the left drawer
     Then the "IronMan" room is opened
     When enter "qwerty2" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty2" sent
@@ -47,6 +49,7 @@ Feature: Message history
     When tap on the "IronMan" room in the left drawer
     Then the "IronMan" room is opened
     When enter "qwerty3" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty3" sent
@@ -67,6 +70,7 @@ Feature: Message history
     When tap on the "IronMan" room in the left drawer
     Then the "IronMan" room is opened
     When enter "qwerty4" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty4" sent
@@ -93,6 +97,7 @@ Feature: Message history
     When tap on the "IronMan" room in the left drawer
     Then the "IronMan" room is opened
     When enter "qwerty5" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty5" sent
@@ -115,6 +120,7 @@ Feature: Message history
     When tap on the "CaptainAmerica" room in the left drawer
     Then the "CaptainAmerica" room is opened
     When enter "qwerty6" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty6" sent
@@ -158,6 +164,7 @@ Feature: Message history
     When tap on the "IronMan" room in the left drawer
     Then the "IronMan" room is opened
     When enter "test message" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "test message" sent
@@ -210,6 +217,7 @@ Feature: Message history
     When tap on the "IronMan" room in the left drawer
     Then the "IronMan" room is opened
     When enter "qwerty7" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty7" sent
@@ -242,6 +250,7 @@ Feature: Message history
     When tap on the "IronMan" room in the left drawer
     Then the "IronMan" room is opened
     When enter "qwerty8" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty8" sent
@@ -275,6 +284,7 @@ Feature: Message history
     When tap on the "IronMan" room in the left drawer
     Then the "IronMan" room is opened
     When enter "qwerty9" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty9" sent
@@ -307,6 +317,7 @@ Feature: Message history
     When tap on the "IronMan" room in the left drawer
     Then the "IronMan" room is opened
     When enter "qwerty10" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty10" sent
@@ -341,6 +352,7 @@ Feature: Message history
     When tap on the "IronMan" room in the left drawer
     Then the "IronMan" room is opened
     When enter "qwerty11" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty11" sent
@@ -375,6 +387,7 @@ Feature: Message history
     When tap on the "IronMan" room in the left drawer
     Then the "IronMan" room is opened
     When enter "qwerty12" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty12" sent
@@ -409,6 +422,7 @@ Feature: Message history
     When tap on the "IronMan" room in the left drawer
     Then the "IronMan" room is opened
     When enter "qwerty13" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty13" sent
@@ -435,6 +449,7 @@ Feature: Message history
     And tap on the "Thor" room in the left drawer
     Then the "Thor" room is opened
     When enter "qwerty15" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty15" sent
@@ -461,6 +476,7 @@ Feature: Message history
     And tap on the "androidQA2" room in the left drawer
     Then the "androidQA2" direct room is opened
     When enter "qwerty17" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty17" sent
@@ -487,6 +503,7 @@ Feature: Message history
     When tap on the "IronMan" room in the left drawer
     Then the "IronMan" room is opened
     When enter "qwerty19" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty19" sent
@@ -518,6 +535,7 @@ Feature: Message history
     And tap on the "Thor" room in the left drawer
     Then the "Thor" room is opened
     When enter "qwerty21" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty21" sent
@@ -549,6 +567,7 @@ Feature: Message history
     And tap on the "androidQA2" room in the left drawer
     Then the "androidQA2" direct room is opened
     When enter "qwerty23" in the "Write a message" input field
+    When hide the keyboard
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty23" sent

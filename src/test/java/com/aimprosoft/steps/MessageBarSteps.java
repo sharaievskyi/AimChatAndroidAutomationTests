@@ -9,8 +9,8 @@ public class MessageBarSteps {
     @Steps
     MessageBarUserSteps steps;
 
-    @Then("empty input field contain {string} placeholder")
-    public void emptyInputFieldContainPlaceholder(String elementName) {
-        steps.emptyInputFieldContainPlaceholder(elementName);
+    @Then("empty input field contains {string} placeholder")
+    public void emptyInputFieldContainsPlaceholder(String elementName) {
+        steps.emptyInputFieldContainsPlaceholder(elementName);
     }
 }

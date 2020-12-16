@@ -37,4 +37,13 @@ public class AuthorizationSteps {
         steps.verifyThatTheProgressBarIsDisplayed();
     }
 
+    @Then("the aimchat logo is displayed")
+    public void theAimchatLogoIsDisplayed() {
+        steps.verifyThatTheAimChatLogoIsDisplayed();
+    }
+
+    @Then("the {string} domain name is displayed")
+    public void theDomainNameIsDisplayed(String domainName) {
+        steps.verifyThatTheDomainNameIsDisplayed(domainName);
+    }
 }

@@ -10,7 +10,7 @@ public class MessageBarUserSteps extends ScenarioSteps {
     MessageBarPage messageBarPage;
 
     @Step
-    public void emptyInputFieldContainPlaceholder(String elementName) {
-        Assert.assertTrue("The " + elementName + " is not presented", messageBarPage.emptyInputFieldContainPlaceholder(elementName));
+    public void emptyInputFieldContainsPlaceholder(String elementName) {
+        Assert.assertTrue("The " + elementName + " is not presented", messageBarPage.emptyInputFieldContainsPlaceholder(elementName));
     }
 }

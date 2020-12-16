@@ -41,9 +41,9 @@ public class AuthorizationPage extends MobilePageObject {
                 .waitFor(ExpectedConditions.presenceOfElementLocated(By.id(AndroidFieldLocators.LOGIN)));
         $$(AndroidFieldLocators.LOGIN).sendKeys(loginSecureUtils.getLogin());
         $$(AndroidFieldLocators.PASSWORD).sendKeys(loginSecureUtils.getPassword());
-//        if ($(AndroidButtonsLocators.SIGN_IN_XPATH).isCurrentlyVisible()) {
-//            getDriver().navigate().back();
-//        }
+        if ($(AndroidButtonsLocators.SIGN_IN_XPATH).isCurrentlyVisible()) {
+            getDriver().navigate().back();
+        }
         $$(AndroidButtonsLocators.SIGN_IN).click();
 //        withTimeoutOf(120, TimeUnit.SECONDS)
 //                .waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(AndroidButtonsLocators.CANCEL_BTN_POP_UP_MENU)));
@@ -66,5 +66,13 @@ public class AuthorizationPage extends MobilePageObject {
     public boolean verifyThatTheProgressBarIsDisplayed() {
         waitFor(ExpectedConditions.visibilityOf(($(AndroidLocators.PROGRESS_BAR_LOAD_DATA))));
         return $(AndroidLocators.PROGRESS_BAR_LOAD_DATA).isDisplayed();
+    }
+
+    public boolean VerifyThatTheAimChatLogoIsDisplayed() {
+        return $$(AndroidLocators.AIMCHAT_LOGO_ID).isDisplayed();
+    }
+
+    public boolean verifyThatTheDomainNameIsDisplayed(String domainName) {
+        return $(AndroidLocators.ELEMENT_WITH_TEXT_XPATH.replace("$1", domainName)).getText().equals(domainName);
     }
 }

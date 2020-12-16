@@ -2,8 +2,8 @@ package com.aimprosoft.myDriver;
 
 import com.aimprosoft.myDriver.appium.AppiumDriverService;
 import com.aimprosoft.utils.PropertiesUtils;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import net.thucydides.core.webdriver.DriverSource;
 import org.openqa.selenium.Capabilities;
@@ -16,13 +16,13 @@ import static com.aimprosoft.myDriver.appium.core.Selectors.elementByIdOrClassNa
 
 public class AndroidWebDriver implements DriverSource {
 
-    private static AndroidDriver driver;
+    private static AppiumDriver driver;
 
     @Override
-    public AndroidDriver newDriver() {
+    public AppiumDriver newDriver() {
         AppiumDriverService service = new AppiumDriverService();
         Capabilities capabilities = getCapabilities();
-        driver = new AndroidDriver(service.getBuilder(), capabilities);
+        driver = new AppiumDriver(service.getBuilder(), capabilities);
         return driver;
     }
 
@@ -31,20 +31,18 @@ public class AndroidWebDriver implements DriverSource {
         return true;
     }
 
-    public static DesiredCapabilities getCapabilities() {
+    private static DesiredCapabilities getCapabilities() {
         Properties properties = PropertiesUtils.getProperties("android.properties");
 
         File classpathRoot = new File(System.getProperty("user.dir"));
         File appDir = new File(classpathRoot, "src/test/resources/apps");
         File app = new File(appDir, properties.getProperty("apk.name"));
 
-
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.APPIUM_VERSION, properties.getProperty("appium.version"));
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, properties.getProperty("android.platform.name"));
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, properties.getProperty("device.name"));
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, properties.getProperty("device.version"));
-        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, properties.getProperty("automationName"));
+        capabilities.setCapability(MobileCapabilityType.VERSION, properties.getProperty("device.version"));
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
         capabilities.setCapability("appWaitPackage", "com.aimprosoft.aimchat");
         capabilities.setCapability("appWaitActivity", "*");
@@ -55,7 +53,7 @@ public class AndroidWebDriver implements DriverSource {
         return elementByIdOrClassName(driver, idOrClassName);
     }
 
-    public static AndroidDriver driver() {
+    public static AppiumDriver driver() {
         return driver;
     }
 }

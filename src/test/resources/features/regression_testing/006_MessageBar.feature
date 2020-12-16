@@ -13,26 +13,26 @@ Feature: Message bar
     Then the "Gallery" button is present
 
   Scenario: 6.002 Check empty input field should contain "Write a message…" placeholder;
-    Then empty input field contain "Write a message…" placeholder
+    Then empty input field contains "Write a message…" placeholder
 
-  Scenario: 6.003 Check send message in "Write a message" input field.
+  Scenario: 6.003 Check send a message in "Write a message" input field.
     Given the "General" room is opened
     When enter "qwerty1" in the "Write a message" input field
     When tap on the "Send" button
     And hide the keyboard
     Then the message "qwerty1" sent
 
-  Scenario: 6.004 Check condition that "Send" button should be disabled until the user enters the first symbol.
+  Scenario: 6.004 Check condition that the "Send" button should be disabled until the user enters the first symbol.
     Given the "General" room is opened
     When tap on the "Send" button
     Then the "Send" button is disabled
 
-  Scenario: 6.005 Check for clickable " Emoji" button on the "Android Message Bar".
+  Scenario: 6.005 Check for clickable "Emoji" button on the "Android Message Bar".
     Given the "General" room is opened
     When tap on the "Emoji" button
     Then the "Emoji keyboard" keyboard is opened
 
-  Scenario: 6.009 Check that emoji send  in a chat history from "Android message bar" in public room.
+  Scenario: 6.009 Check that emoji send in a chat history from "Android message bar" in public room.
     Given the "General" room is opened
     When tap on the "Emoji" button
     Then the "Emoji keyboard" keyboard is opened
@@ -42,7 +42,7 @@ Feature: Message bar
     Then the chat history is opened
     Then the message "😬" sent
 
-  Scenario: 6.010 Check that emoji send  in a chat history from "Android message bar" in private room.
+  Scenario: 6.010 Check that emoji send in a chat history from "Android message bar" in private room.
     Given the "General" room is opened
     When tap on the "Logo" button
     Then Left Drawer is opened
@@ -57,7 +57,7 @@ Feature: Message bar
     Then the chat history is opened
     Then the message "😬" sent
 
-  Scenario: 6.011 Check that emoji send  in a chat history from "Android message bar" in direct room.
+  Scenario: 6.011 Check that emoji send in a chat history from "Android message bar" in direct room.
     Given the "General" room is opened
     When tap on the "Logo" button
     Then Left Drawer is opened

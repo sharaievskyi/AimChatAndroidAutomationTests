@@ -2,6 +2,7 @@ package com.aimprosoft.androidPages;
 
 import com.aimprosoft.locators.AndroidButtonsLocators;
 import com.aimprosoft.locators.AndroidFieldLocators;
+import com.aimprosoft.locators.AndroidLinksLocators;
 import com.aimprosoft.locators.AndroidLocators;
 import com.aimprosoft.myDriver.AndroidWebDriver;
 import com.aimprosoft.myDriver.appium.core.MobilePageObject;
@@ -29,6 +30,10 @@ public class CommonElementsPage extends MobilePageObject {
         return LocatorsReflection.getSelector(AndroidLocators.class.getName(), elementName);
     }
 
+    private String getLinksLocator(String elementName) {
+        return LocatorsReflection.getSelector(AndroidLinksLocators.class.getName(), elementName);
+    }
+
     public boolean verifyThatTheWidgetWithTheTextIsPresented(String widgetText) {
         withTimeoutOf(60, TimeUnit.SECONDS)
                 .waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(AndroidLocators.ELEMENT_WITH_TEXT_XPATH.replace("$1", widgetText))));
@@ -44,9 +49,14 @@ public class CommonElementsPage extends MobilePageObject {
 //    }
 
     public boolean verifyThatTheWarningIsDisplayed (String warningMessage) {
+//        waitABit(2000);
         withTimeoutOf(60, TimeUnit.SECONDS)
-                .waitFor(ExpectedConditions.presenceOfElementLocated(By.className("android.widget.TextView")));
+                .waitFor(ExpectedConditions.presenceOfElementLocated(By.id("textinput_error")));
+//        withTimeoutOf(30, TimeUnit.SECONDS)
+//                .waitFor(ExpectedConditions.presenceOfElementLocated(By.id("textinput_error")));
         return androidElementByText(warningMessage).isDisplayed();
+//        return $(AndroidLocators.TEXT_INPUT_ERROR_XPATH.replace("$1", warningMessage)).isVisible();
+//        return getDriver().findElement(By.id("textinput_error")).getText().equals(warningMessage);
     }
 
     public void enterTheValueInTheElement(String valueToEnter, String fieldName) {
@@ -151,7 +161,7 @@ public class CommonElementsPage extends MobilePageObject {
 
     public boolean messageIsSharedToTheRoom(String messageText) {
 //        return $$(AndroidLocators.SHARE_MESSAGE).isDisplayed() && androidElementByText(messageText).isDisplayed();
-        scrollDown();
+//        scrollDown();
         return $(AndroidLocators.SHARE_MESSAGE_CONTAINER_XPATH).isVisible() && $(AndroidLocators.SHARE_MESSAGE_TEXT_XPATH.replace("$1", messageText)).isVisible();
     }
 
@@ -287,5 +297,35 @@ public class CommonElementsPage extends MobilePageObject {
         TouchAction action = new TouchAction(AndroidWebDriver.driver());
         action.press(200, 1510).release().perform();
         waitABit(2000);
+    }
+
+    public boolean waitWhileTheElementWouldBePresented(String elementName) {
+        withTimeoutOf(25, TimeUnit.SECONDS)
+                .waitFor(ExpectedConditions.presenceOfElementLocated(By.id(elementName)));
+        return $$(getAndroidLocator(elementName)).isDisplayed();
+    }
+
+    public boolean verifyThatTheInputFieldIsDisplayed(String fieldName) {
+        return $$(getFieldLocator(fieldName)).isDisplayed();
+    }
+
+    public boolean verifyThatTheInputFieldContainsPlaceholder(String fieldName, String placeholder) {
+        return $$(getFieldLocator(fieldName)).getText().equals(placeholder);
+    }
+
+    public boolean verifyThatTheLinkIsDisplayed(String linkName) {
+        return $$(getLinksLocator(linkName)).isDisplayed();
+    }
+
+    public boolean verifyThatTheButtonIsDisplayed(String buttonName) {
+        return $$(getButtonLocator(buttonName)).isDisplayed();
+    }
+
+    public boolean verifyThatTheButtonIsEnabled(String buttonName) {
+        return $$(getButtonLocator(buttonName)).isEnabled();
+    }
+
+    public boolean verifyThatTheTextIsDisplayed(String text) {
+        return androidElementByText(text).isDisplayed();
     }
 }

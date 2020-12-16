@@ -205,15 +205,40 @@ public class CommonUserSteps extends ScenarioSteps {
         commonElementsPage.tapOnTheField(elementId);
     }
     @Step
-    public void tapOnTheEnterButtonOnThePhoneKeyboard() {
-        commonElementsPage.tapOnTheEnterButtonOnThePhoneKeyboard();
+    public void tapOnTheEnterButtonOnThePhoneKeyboard() { commonElementsPage.tapOnTheEnterButtonOnThePhoneKeyboard();
     }
     @Step
-    public void longTapOnTheField(String fieldId) {
-        commonElementsPage.longTapOnTheField(fieldId);
+    public void longTapOnTheField(String fieldId) { commonElementsPage.longTapOnTheField(fieldId);
     }
     @Step
-    public void tapOnThePasteButton() {
-        commonElementsPage.tapOnThePasteButton();
+    public void tapOnThePasteButton() { commonElementsPage.tapOnThePasteButton();
+    }
+    @Step
+    public void waitWhileTheElementWouldBePresented(String elementName) {
+        Assert.assertTrue("Element is not displayed" + elementName, commonElementsPage.waitWhileTheElementWouldBePresented(elementName));
+    }
+    @Step
+    public void verifyThatTheInputFieldIsDisplayed(String fieldName) {
+        Assert.assertTrue("The " + fieldName + " input field isn't displayed", commonElementsPage.verifyThatTheInputFieldIsDisplayed(fieldName));
+    }
+    @Step
+    public void verifyThatTheInputFieldContainsPlaceholder(String fieldName, String placeholder) {
+        Assert.assertTrue("The " + fieldName + " input field isn't contained "+ placeholder + " placeholder", commonElementsPage.verifyThatTheInputFieldContainsPlaceholder(fieldName, placeholder));
+    }
+    @Step
+    public void verifyThatTheLinkIsDisplayed(String linkName) {
+        Assert.assertTrue("The link " + linkName + " isn't displayed", commonElementsPage.verifyThatTheLinkIsDisplayed(linkName));
+    }
+    @Step
+    public void verifyThatTheButtonIsDisplayed(String buttonName) {
+        Assert.assertTrue("The " + buttonName + " button isn't displayed", commonElementsPage.verifyThatTheButtonIsDisplayed(buttonName));
+    }
+    @Step
+    public void verifyThatTheButtonIsEnabled(String buttonName) {
+        Assert.assertTrue("The " + buttonName + " button is dispabled", commonElementsPage.verifyThatTheButtonIsEnabled(buttonName));
+    }
+    @Step
+    public void verifyThatTheTextIsDisplayed(String text) {
+        Assert.assertTrue("The text is not displayed", commonElementsPage.verifyThatTheTextIsDisplayed(text));
     }
 }

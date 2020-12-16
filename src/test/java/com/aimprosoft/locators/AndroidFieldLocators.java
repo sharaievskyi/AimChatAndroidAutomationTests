@@ -3,11 +3,13 @@ package com.aimprosoft.locators;
 public interface AndroidFieldLocators {
 
     String YOUR_TEAM_URL = "team_url";
+    String TEAM_URL = "team_url";
     String USERNAME = "email";
     String LOGIN = "login_input";
     String PASSWORD = "password_input";
     String INPUT_FIELD = "//android.widget.EditText[contains(@resource-id, '$1')]";
     String INPUT_FIELD_XPATH = "//android.widget.EditText";
+    String FORGOT_EMAIL = "forgot_email_input";
 
     // Room creation
     String CREATE_ROOM_NAME = "create_room_name";

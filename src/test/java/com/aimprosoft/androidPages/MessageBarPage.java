@@ -8,7 +8,7 @@ public class MessageBarPage extends MobilePageObject {
 
     public MessageBarPage (WebDriver driver) { super(driver);}
 
-    public boolean emptyInputFieldContainPlaceholder(String elementName) {
+    public boolean emptyInputFieldContainsPlaceholder(String elementName) {
         return $$(AndroidLocators.MAIN_INPUT).getText().equals(elementName);
     }
 }

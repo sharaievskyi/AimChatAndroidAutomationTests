@@ -392,4 +392,44 @@ public class CommonSteps {
     public void tapOnThePasteButton() {
         steps.tapOnThePasteButton();
     }
+
+    @And("wait while the {string} element would be presented")
+    public void waitWhileTheElementWouldBePresented(String elementName) {
+        steps.waitWhileTheElementWouldBePresented(elementName);
+    }
+
+    @Then("the {string} input field is displayed")
+    public void theInputFieldIsDisplayed(String fieldName) {
+        steps.verifyThatTheInputFieldIsDisplayed(fieldName);
+    }
+
+    @Then("the {string} input field contains {string} placeholder")
+    public void theInputFieldContainsPlaceholder(String fieldName, String placeholder) {
+        steps.verifyThatTheInputFieldContainsPlaceholder(fieldName, placeholder);
+    }
+
+    @Then("the {string} button is displayed")
+    public void theButtonIsDisplayed(String buttonName) {
+        steps.verifyThatTheButtonIsDisplayed(buttonName);
+    }
+
+    @Then("the {string} link is displayed")
+    public void theLinkIsDisplayed(String linkName) {
+        steps.verifyThatTheLinkIsDisplayed(linkName);
+    }
+
+    @Then("the {string} button is enabled")
+    public void theButtonIsEnabled(String buttonName) {
+        steps.verifyThatTheButtonIsEnabled(buttonName);
+    }
+
+    @Then("the {string} description is displayed")
+    public void theDescriptionIsDisplayed(String text) {
+        steps.verifyThatTheTextIsDisplayed(text);
+    }
+
+    @Then("the {string} header is displayed")
+    public void theHeaderIsDisplayed(String textElement) {
+        steps.verifyThatTheWidgetWithTheTextIsPresented(textElement);
+    }
 }

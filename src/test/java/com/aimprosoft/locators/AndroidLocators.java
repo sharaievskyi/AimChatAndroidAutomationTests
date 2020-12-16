@@ -2,6 +2,7 @@ package com.aimprosoft.locators;
 
 public interface AndroidLocators {
 
+    String AIMCHAT_LOGO_ID = "aim_logo";
     String ENTRANCE_LOGO = "android.widget.ImageView";
     String ANIMATION_VIEW_XPATH = "//android.widget.ImageView[contains(@resource-id, 'animation_view')]";
     String TOOLBAR_ID = "toolbar";
@@ -13,6 +14,7 @@ public interface AndroidLocators {
     String PROGRESS_BAR_LOAD_DATA = "//android.widget.ProgressBar[contains(@resource-id, 'progressBarLoadData')]";
     String PROGRESS_BAR = "//android.widget.ProgressBar";
     String UNREAD_COUNT_ICON = "//android.widget.TextView[contains(@resource-id, 'unread_count_icon')]";
+    String TEXT_INPUT_ERROR_XPATH = "//android.widget.TextView[contains(@resource-id, 'textinput_error')][@text='$1']";
 
     // Room screen
     String ROOM_TITLE_NAME_ID = "toolbar_title";
@@ -38,6 +40,7 @@ public interface AndroidLocators {
 
     // Browse room screen
     String ACTION_SEARCH = "action_search";
+    String SEARCH_SIGN = "//android.widget.TextView[contains(@resource-id, 'action_search')]";
     String BROWSE_ROOMS_LIST_ID = "room_name";
     String BROWSE_ROOMS_LIST_XPATH = "//android.widget.TextView[contains(@resource-id, 'room_name')][@text='$1']";
 
