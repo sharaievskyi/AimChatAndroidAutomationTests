@@ -61,7 +61,8 @@ public class CommonElementsPage extends MobilePageObject {
 
     public void enterTheValueInTheElement(String valueToEnter, String fieldName) {
         $$(getFieldLocator(fieldName)).click();
-        $$(getFieldLocator(fieldName)).sendKeys(valueToEnter);
+//        $$(getFieldLocator(fieldName)).sendKeys(valueToEnter);
+        $$(getFieldLocator(fieldName)).setValue(valueToEnter);
     }
 
     public void clickOnTheButton(String buttonId) {
