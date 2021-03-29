@@ -49,14 +49,15 @@ public class CommonElementsPage extends MobilePageObject {
 //    }
 
     public boolean verifyThatTheWarningIsDisplayed (String warningMessage) {
-//        waitABit(2000);
-        withTimeoutOf(60, TimeUnit.SECONDS)
-                .waitFor(ExpectedConditions.presenceOfElementLocated(By.id("textinput_error")));
+        waitABit(2000);
+//        withTimeoutOf(60, TimeUnit.SECONDS)
+//                .waitFor(ExpectedConditions.presenceOfElementLocated(By.id("textinput_error")));
 //        withTimeoutOf(30, TimeUnit.SECONDS)
 //                .waitFor(ExpectedConditions.presenceOfElementLocated(By.id("textinput_error")));
-        return androidElementByText(warningMessage).isDisplayed();
+//        return androidElementByText(warningMessage).isDisplayed();
 //        return $(AndroidLocators.TEXT_INPUT_ERROR_XPATH.replace("$1", warningMessage)).isVisible();
 //        return getDriver().findElement(By.id("textinput_error")).getText().equals(warningMessage);
+        return androidElementByText(warningMessage).getText().contains(warningMessage);
     }
 
     public void enterTheValueInTheElement(String valueToEnter, String fieldName) {

@@ -336,7 +336,7 @@ Feature: Authorization
     Then the "SEND RESET INSTRUCTIONS" button is displayed
     Then the "SEND RESET INSTRUCTIONS" button is disabled
 
-  Scenario: 1.035 Check transition by tap on the "Back" button in the "Sign in to Aimprosoft" screen.
+  Scenario: 1.037 Check transition by tap on the "Back" button in the "Sign in to Aimprosoft" screen.
     Given the "Sign in to your Team" screen is opened
     Then the "CONTINUE" button is disabled
     When enter "chat-demo" in the "Your team url" input field
